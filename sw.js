@@ -1,6 +1,6 @@
 // This is the "Offline copy of pages" service worker
 
-const CACHE = "pwabuilder-offline-v3";
+const CACHE = "github-pages-build5";
 
 importScripts(
   "https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js"
