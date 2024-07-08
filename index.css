@@ -1,0 +1,166 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.horizontalClamp {
+  margin: 0 auto;
+  display: flex;
+  width: 100%;
+  max-width: 500px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 500px;
+}
+
+#date_title {
+  font-size: 82px;
+}
+
+#comment {
+  color: #7e7e7e;
+  margin: 0;
+}
+#time {
+  margin: 0;
+}
+
+.answerButtonsContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+button {
+  cursor: pointer;
+}
+
+.dowButton {
+  border: none;
+  padding: 15px;
+  border-radius: 8px;
+  width: 100%;
+  background-color: #f6f5f4;
+}
+.disabledButton {
+  background-color: hsl(30, 10%, 98%);
+  color: #b5b5b5;
+  cursor: default;
+}
+
+@media (max-width: 600px) {
+  .answerButtonsContainer {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    width: 90%;
+  }
+  .date {
+    height: 400px;
+  }
+  #date_title {
+    font-size: 61px;
+  }
+}
+
+.giveFeedback {
+  margin-top: 10px;
+  padding: 0 15px;
+  display: none;
+}
+
+.algorithmSolved {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px #c6c6c6;
+}
+
+.step {
+  background-color: #f6f5f4;
+  border-bottom: 1px #b5b5b5 solid;
+  padding: 14px 20px;
+}
+
+.step.selected {
+  background-color: #99c1f1;
+  border-color: #8aaed9;
+}
+
+.nextContainer {
+  padding: 20px;
+  display: none;
+  align-content: space-between;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.nextButton {
+  background-color: #1c71d8;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+#download.nextButton {
+  background-color: #f6f5f4;
+  color: black;
+}
+
+hr {
+  border-color: white;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #eee;
+    background: #121212;
+  }
+
+  .dowButton,
+  #download.nextButton {
+    background-color: #282828;
+    color: white;
+  }
+  .disabledButton {
+    background-color: hsl(0, 0%, 10.2%);
+    color: #606060;
+    cursor: default;
+  }
+  .step {
+    background-color: #131313;
+    border-bottom: 1px #242424 solid;
+    padding: 14px 20px;
+  }
+  .algorithmSolved {
+    border: #2f2f2f 1px solid;
+    box-shadow: none;
+  }
+  .step.selected {
+    background-color: #052853;
+    border-color: #153759;
+  }
+  hr {
+    border-color: #2b2b2b;
+  }
+}
+
+.correctAnswer {
+  background-color: #33d17a;
+  color: white;
+}
+
+.wrongAnswer {
+  background-color: #e01b24;
+  color: white;
+}
