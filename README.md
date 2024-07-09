@@ -8,7 +8,7 @@ You can access a [live demo](https://george-ober.github.io/doomsday-trainer/) th
 
 ## Why write another?
 
-Many other projects hosted on GitHub offer similar functionnalities, but they do not allow the user to keep track of their progress by keeping a log of all the times they played. The data is, of course, **stored locally** in the $localStorage$, and can be **exported as a JSON** file by clicking the Download Data button.
+Many other projects hosted on GitHub offer similar functionnalities, but they do not allow the user to keep track of their progress by keeping a log of all the times they played. The data is, of course, **stored locally** in the `localStorage`, and can be **exported as a JSON** file by clicking the Download Data button.
 
 In fact, if you are a data junkie, here is an example of an entry for a "round":
 
