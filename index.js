@@ -115,7 +115,10 @@ function addStep(title, id) {
 }
 
 function reconstructAlgorithm() {
-  let bigYear = randomDate.getFullYear();
+  let captureGroups = randomDate
+    .toISOString()
+    .match(/(\d{4})-(\d{2})-(\d{2})T\d{2}:\d{2}:\d{2}/);
+  let bigYear = parseInt(captureGroups[1]);
   let smallYear = bigYear % 100;
 
   let afterStep1;
@@ -172,7 +175,7 @@ function reconstructAlgorithm() {
     "add-century"
   );
 
-  let month = randomDate.getMonth() + 1;
+  let month = parseInt(captureGroups[2]);
   let isLeapYear;
 
   if (bigYear % 4 == 0) {
@@ -214,7 +217,7 @@ function reconstructAlgorithm() {
     "doomsday-month"
   );
 
-  let day = randomDate.getDate();
+  let day = parseInt(captureGroups[3]);
   let dayDifference = day - monthDoomsday;
   addStep(
     `${day} - ${monthDoomsday} = ${dayDifference} days are between these two dates`,
