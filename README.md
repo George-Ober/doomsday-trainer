@@ -4,9 +4,11 @@ Train yourself to execute Conway's doomsday algorithm with this PWA.
 
 I'm assuming you know the [doomsday rule and the "odd +11" method](https://en.wikipedia.org/wiki/Doomsday_rule#The_%22odd_+_11%22_method).
 
+You can access a [live demo](https://george-ober.github.io/doomsday-trainer/) that can be installed and used offline as a PWA.
+
 ## Why write another?
 
-Many other projects hosted on GitHub offer similar functionnalities, but they do not allow the user to keep track of their progress by keeping a log of all the times they played.
+Many other projects hosted on GitHub offer similar functionnalities, but they do not allow the user to keep track of their progress by keeping a log of all the times they played. The data is, of course, **stored locally** in the $localStorage$, and can be **exported as a JSON** file by clicking the Download Data button.
 
 In fact, if you are a data junkie, here is an example of an entry for a "round":
 
@@ -34,7 +36,7 @@ This is potentially the biggest missing feature in all the other alternatives gi
 
 After answering a round, right or wrong, you are shown an interface with a line-by-line description of every step of the process that you should have done in your head.
 
-<img src="example_reconstruction.png" width="300">
+<img src="example_reconstruction.png" width="500">
 
 You can then select one or multiple rows, or steps, where you remember having made a mistake.
 
@@ -69,3 +71,5 @@ A big inspiration to do something was [Grantas33](https://github.com/grantas33/D
 [Benjenkins95](https://benjenkinsv95.github.io/doomsday-rule-trainer/)'s project can also be mentionned, with his interactive solving idea. They both use React.
 
 I first tried bringing this idea to life with a Linux program written with GTK4 that I could publish as a Flatpak, but then I found out it would be heavier than a React App, so I just wrote this bare HTML, CSS, and JS solution and it works.
+
+The code is published under the GPLv3 license.
