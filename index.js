@@ -144,7 +144,7 @@ function reconstructAlgorithm() {
     afterStep3 = afterStep2 + 11;
     addStep(
       `${afterStep2} is odd, so we add 11 to it : ${afterStep3}`,
-      "first-add-11"
+      "second-add-11"
     );
   }
 
