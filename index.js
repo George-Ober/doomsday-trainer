@@ -83,9 +83,6 @@ function resetEverything() {
 
   startTimestamp = Date.now();
 
-  rightAnswer = randomDate.getDay();
-  console.log(rightAnswer);
-
   _date_display.innerText = randomDate.toISOString().slice(0, 10);
   awaitsInput = true;
 }
@@ -234,6 +231,7 @@ function reconstructAlgorithm() {
   addStep(`Modulo 7, that is ${answer}`, "final-mod");
 
   addStep(`The day is a ${daysOfWeek[answer]}`, "number-to-day");
+  return answer;
 }
 
 let givenAnswer;
@@ -243,15 +241,17 @@ function respond(dayClicked) {
     givenAnswer = dayClicked;
     awaitsInput = false;
 
+    let endTimestamp = Date.now();
+    delta = (endTimestamp - startTimestamp) / 1000;
+
+    rightAnswer = reconstructAlgorithm();
+
     let _right_answer_button = _answer_buttons[rightAnswer];
     _right_answer_button.classList.add("correctAnswer");
 
     _answer_buttons.forEach((e) => {
       e.classList.add("disabledButton");
     });
-
-    let endTimestamp = Date.now();
-    delta = (endTimestamp - startTimestamp) / 1000;
 
     if (rightAnswer == dayClicked) {
       _comment.innerText = "That's very impressive!";
@@ -261,8 +261,6 @@ function respond(dayClicked) {
       _comment.innerText = "Better luck next time!";
     }
     _time.innerText = delta.toFixed(2);
-
-    reconstructAlgorithm();
 
     _feedback_viewer.style.display = "block";
     _next_container.style.display = "flex";
