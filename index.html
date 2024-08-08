@@ -2,6 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Doomsday algorithm trainer</title>
     <link rel="stylesheet" type="text/css" href="index.css" />
@@ -44,7 +48,15 @@
         <button id="open_stats" class="nextButton">View Stats</button>
         <button id="next" class="nextButton">Next</button>
       </div>
-      <span>v14</span>
+      <div>
+        <span>v15</span>
+        <div id="update_menu" style="display: none">
+          <span>An update is available, please restart the page :</span>
+          <button class="nextButton" onclick="window.location.reload();">
+            Update
+          </button>
+        </div>
+      </div>
     </div>
 
     <div id="my_modal" class="modal">
@@ -100,6 +112,7 @@
             ></span>
           </div>
         </div>
+        <span style="color: var(--text-2)">More data will be coming soon</span>
         <div class="chartContainer">
           <canvas
             id="my_chart"
@@ -117,7 +130,19 @@
     <script src="index.js"></script>
     <script>
       if (typeof navigator.serviceWorker !== "undefined") {
-        navigator.serviceWorker.register("sw.js");
+        navigator.serviceWorker.register("sw.js").then((registration) => {
+          registration.onupdatefound = () => {
+            if (null != registration.active) {
+              const t = registration.installing;
+              t.onstatechange = () => {
+                "installed" == t.state && showUpdate();
+              };
+            }
+          };
+        });
+      }
+      function showUpdate() {
+        document.getElementById("update_menu").style.display = "block";
       }
     </script>
   </body>

@@ -164,6 +164,7 @@ h2 {
 }
 
 h2,
+span,
 p {
   color: var(--text-1);
 }
@@ -360,4 +361,15 @@ p {
     transform: translateY(-100px) translateX(-50%);
     opacity: 0;
   }
+}
+
+#update_menu {
+  margin-top: 5px;
+  background: var(--lime-bg);
+  padding: 10px;
+  border-radius: 8px;
+}
+#update_menu > .nextButton {
+  background: var(--lime-text);
+  color: var(--bg-1);
 }
