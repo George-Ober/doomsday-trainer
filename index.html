@@ -41,12 +41,79 @@
         </p>
       </div>
       <div class="nextContainer" id="next_container">
-        <button id="download" class="nextButton">Download Data</button>
+        <button id="open_stats" class="nextButton">View Stats</button>
         <button id="next" class="nextButton">Next</button>
       </div>
-      <span>v13</span>
+      <span>v14</span>
     </div>
 
+    <div id="my_modal" class="modal">
+      <!-- Modal Content -->
+      <div class="modal-content">
+        <h2>Statistics</h2>
+
+        <div class="statsGrid">
+          <div class="statsSquare" style="background-color: var(--red-bg)">
+            <span class="statsTitleOne">You've played</span>
+            <span class="statsValue" id="number_games"></span>
+            <span class="statsTitleTwo" style="color: var(--red-text)"
+              >games</span
+            >
+          </div>
+          <div class="statsSquare" style="background-color: var(--blue-bg)">
+            <span class="statsTitleOne">You've succeeded</span>
+            <span class="statsValue" id="number_succeeded"></span>
+            <span class="statsTitleTwo" style="color: var(--blue-text)"
+              >guesses</span
+            >
+          </div>
+          <div class="statsSquare" style="background: var(--sun-bg)">
+            <span class="statsTitleOne">Your average time is</span>
+            <span class="statsValue" id="avg10"></span>
+            <span class="statsTitleTwo" style="color: var(--sun-text)"
+              >over the last 10 games</span
+            >
+          </div>
+          <div class="statsSquare" style="background: var(--lime-bg)">
+            <span class="statsTitleOne">Your worst day is</span>
+            <span
+              class="statsValue"
+              style="font-size: 1.2em"
+              id="worstday"
+            ></span>
+            <span
+              class="statsTitleTwo"
+              style="color: var(--lime-text)"
+              id="worstday_failures"
+            ></span>
+          </div>
+          <div
+            class="statsSquare"
+            style="background: var(--pink-bg); width: 270px"
+          >
+            <span class="statsTitleOne">Your preferred century is</span>
+            <span class="statsValue" id="preferred_century">1900s</span>
+            <span
+              class="statsTitleTwo"
+              id="preferred_century_percentage"
+              style="color: var(--pink-text)"
+            ></span>
+          </div>
+        </div>
+        <div class="chartContainer">
+          <canvas
+            id="my_chart"
+            style="width: 100%; max-width: 700px; margin: 0 auto"
+          ></canvas>
+        </div>
+        <div class="nextContainer" style="display: flex">
+          <button class="nextButton" id="download_btn">Download Data</button>
+          <button class="nextButton" id="close_btn">Close Stats</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="index.js"></script>
     <script>
       if (typeof navigator.serviceWorker !== "undefined") {
