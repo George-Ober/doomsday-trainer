@@ -48,9 +48,9 @@ Here is a list of all the error types and their meaning
 
 | Key                       | Meaning                                                                | Suggested Report or Comments                                                                            |
 | ------------------------- | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| `first-add-11`            | Correctly added the 11 for the first time                              | If you forgot to add it when odd or if you did it when even or if you made a math mistake               |
+| `first-add-11`            | Correctly added the 11 at the first step                               | If you forgot to add it when odd or if you did it when even or if you made a math mistake               |
 | `divide-two`              | Correctly divided by two                                               | If you made a math mistake                                                                              |
-| `second-add-11`           | Correctly added 11 for the second time                                 | If you forgot to add it when odd or if you did it when even or if you made a math mistake               |
+| `second-add-11`           | Correctly added 11 at the second step                                  | If you forgot to add it when odd or if you did it when even or if you made a math mistake               |
 | `higher-multiple`         | Correctly found the closest higher multiple of 7                       | If you used any other number                                                                            |
 | `difference`              | Correctly subtracted the number from the higher multiple               | If you made a substraction error                                                                        |
 | `century-index`           | Correctly found the century index                                      | If you don't know the 5 3 2 0 coefficients                                                              |
