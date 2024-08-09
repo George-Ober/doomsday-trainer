@@ -327,6 +327,24 @@ _stats_btn.onclick = function () {
   // Worst day
   let worstDayCounters = [0, 0, 0, 0, 0, 0, 0];
   let centuryCounters = [0, 0, 0, 0];
+  let errorTypeCounter = {
+    "first-add-11": 0,
+    "divide-two": 0,
+    "second-add-11": 0,
+    "higher-multiple": 0,
+    difference: 0,
+    "century-index": 0,
+    "add-century": 0,
+    "noleap-century-100": 0,
+    "leap-century-400": 0,
+    "leap-normal": 0,
+    "noleap-normal": 0,
+    "doomsday-month": 0,
+    "day-difference": 0,
+    "sum-difference-doomsday": 0,
+    "final-mod": 0,
+    "number-to-day": 0,
+  };
 
   let correctTimes = [];
   let q = 1;
@@ -347,6 +365,20 @@ _stats_btn.onclick = function () {
       centuryCounters[century % 4] += 1;
     } else {
       worstDayCounters[element.expectedAnswer] += 1;
+    }
+    for (let j = 0; j < element.errorsMade.length; j++) {
+      const error = element.errorsMade[j];
+      errorTypeCounter[error] += 1;
+    }
+  }
+
+  console.table(errorTypeCounter);
+  for (const key in errorTypeCounter) {
+    if (Object.prototype.hasOwnProperty.call(errorTypeCounter, key)) {
+      const effectif = errorTypeCounter[key];
+      gbid(`stats_table_${key}`).innerText = `${effectif}/${data.length} (${
+        Math.round((1000 * effectif) / data.length) / 100
+      }%)`;
     }
   }
 

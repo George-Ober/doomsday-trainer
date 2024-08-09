@@ -373,3 +373,33 @@ p {
   background: var(--lime-text);
   color: var(--bg-1);
 }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th,
+td {
+  border: 1px solid var(--bg-4);
+  padding: 8px;
+  text-align: left;
+  color: var(--text-1);
+}
+
+.code {
+  background-color: var(--bg-4);
+  font-family: monospace;
+  padding: 2px 4px;
+  border-radius: 2px;
+}
+
+thead > tr:nth-child(odd) {
+  background-color: var(--bg-3);
+}
+
+tr:nth-child(even) {
+  background-color: var(--bg-2);
+}
+tr:nth-child(odd) {
+  background-color: var(--bg-1);
+}

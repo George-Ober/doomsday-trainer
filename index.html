@@ -117,13 +117,142 @@
             ></span>
           </div>
         </div>
-        <span style="color: var(--text-2)">More data will be coming soon</span>
         <div class="chartContainer">
           <canvas
             id="my_chart"
             style="width: 100%; max-width: 700px; margin: 0 auto"
           ></canvas>
         </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Meaning</th>
+              <th>Frequency</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <span class="code">first-add-11</span>
+              </td>
+              <td>Correctly added the 11 at the first step</td>
+              <td id="stats_table_first-add-11"></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="code">divide-two</span>
+              </td>
+              <td>Correctly divided by two</td>
+              <td id="stats_table_divide-two"></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="code">second-add-11</span>
+              </td>
+              <td>Correctly added 11 at the second step</td>
+              <td id="stats_table_second-add-11"></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="code">higher-multiple</span>
+              </td>
+              <td>Correctly found the closest higher multiple of 7</td>
+              <td id="stats_table_higher-multiple"></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="code">difference</span>
+              </td>
+              <td>Correctly subtracted the number from the higher multiple</td>
+              <td id="stats_table_difference"></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="code">century-index</span>
+              </td>
+              <td>Correctly found the century index</td>
+              <td id="stats_table_century-index"></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="code">add-century</span>
+              </td>
+              <td>Correctly summed the century index to the difference</td>
+              <td id="stats_table_add-century"></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="code">noleap-century-100</span>
+              </td>
+              <td>
+                Did not identify years like 1800, 1900, 2100 as leap years
+              </td>
+              <td id="stats_table_noleap-century-100"></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="code">leap-century-400</span>
+              </td>
+              <td>
+                _Did_ identify years like 2000 as leap years (400 year rule)
+              </td>
+              <td id="stats_table_leap-century-400"></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="code">leap-normal</span>
+              </td>
+              <td>Correctly identified a leap year for a non 00s year</td>
+              <td id="stats_table_leap-normal"></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="code">noleap-normal</span>
+              </td>
+              <td>Did not identify a year as a leap year when it wasn't</td>
+              <td id="stats_table_noleap-normal"></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="code">doomsday-month</span>
+              </td>
+              <td>Correctly used a known doomsday for the required month</td>
+              <td id="stats_table_doomsday-month"></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="code">day-difference</span>
+              </td>
+              <td>Correctly substracted the doomsday from the date</td>
+              <td id="stats_table_day-difference"></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="code">sum-difference-doomsday</span>
+              </td>
+              <td>Correctly added the doomsday to this day difference</td>
+              <td id="stats_table_sum-difference-doomsday"></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="code">final-mod</span>
+              </td>
+              <td>Correctly found the modulo value</td>
+              <td id="stats_table_final-mod"></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="code">number-to-day</span>
+              </td>
+              <td>
+                Correctly found the name of the day of the week associated to a
+                number
+              </td>
+              <td id="stats_table_number-to-day"></td>
+            </tr>
+          </tbody>
+        </table>
         <div class="nextContainer" style="display: flex">
           <button class="nextButton" id="download_btn">Download Data</button>
           <button class="nextButton" id="close_btn">Close Stats</button>
