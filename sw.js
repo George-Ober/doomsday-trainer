@@ -1,9 +1,9 @@
 // This is the "Offline copy of pages" service worker
 
-const CACHE = "github-pages-build18";
+const CACHE = "github-pages-build19";
 
 importScripts(
-  "https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js"
+  "https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js",
 );
 
 self.addEventListener("message", (event) => {
@@ -16,5 +16,5 @@ workbox.routing.registerRoute(
   new RegExp("/*"),
   new workbox.strategies.StaleWhileRevalidate({
     cacheName: CACHE,
-  })
+  }),
 );
